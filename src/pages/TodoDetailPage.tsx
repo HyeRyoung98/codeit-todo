@@ -97,19 +97,16 @@ export default function TodoDetailPage() {
         try {
             let imageUrl = todo.imageUrl;
 
-            console.log(`1 : {imageUrl}`);
-
             // 새 이미지 선택한 경우
             if (selectedFile) {
                 imageUrl = await uploadImage(
                     selectedFile
                 );
-                console.log(`2 : {imageUrl}`);
             }
 
             const updatedTodo = await updateTodo(todo.id, {
-                memo: todo.memo,
-                imageUrl,
+                memo: todo.memo ? todo.memo : "",
+                imageUrl: imageUrl ? imageUrl : "",
                 isCompleted: todo.isCompleted,
             });
 
