@@ -156,8 +156,6 @@ export default function TodoDetailPage() {
                     <EditButton isEdited={isEdited} onClick={handleEdit}></EditButton>
                     <DeleteButton onClick={handleDelete}></DeleteButton>
                 </div>
-                <h1>상세페이지</h1>
-                <p>Todo ID: {id}</p>
             </div>
         </div>
     );
