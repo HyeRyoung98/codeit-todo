@@ -2,7 +2,7 @@ import type { Todo, TodoDetail, UpdateItem } from "../types/types";
 
 const BASE_URL = import.meta.env.VITE_API_URL;
 
-const TENANT_ID = import.meta.env.TENANT_ID;
+const TENANT_ID = import.meta.env.VITE_TENANT_ID;
 
 export async function getTodos(): Promise<Todo[]> {
   const res = await fetch(`${BASE_URL}/${TENANT_ID}/items`);
