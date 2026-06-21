@@ -1,0 +1,103 @@
+.main-area {
+    flex: 1;
+    background-color: #F9FAF8;
+    padding: 24px 360px;
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+    .main-area {
+        padding: 24px 24px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+    .main-area {
+        padding: 16px 16px;
+    }
+}
+
+.input-area{
+    display: flex;
+    gap: 16px;
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+    .input-area{
+        gap: 16px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+    .input-area{
+        gap: 8px;
+    }
+}
+
+.todolist-area{
+    display: flex;
+    gap: 24px;
+    margin: 40px 0;
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+    .todolist-area{
+        flex-direction: column;
+        gap: 48px;
+        margin: 40px 0;
+    }   
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+    .todolist-area{
+        flex-direction: column;
+        gap: 48px;
+        margin: 24px 0;
+    }   
+}
+
+.todo-area{
+    width: 100%;
+}
+
+.done-area{
+    width: 100%;
+}
+
+.empty-area{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.empty-area img{
+    margin-top: 64px;
+    margin-bottom: 24px;
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+    .empty-area img{
+        margin-top: 24px;
+        margin-bottom: 24px;
+    } 
+}
+
+
+/* Mobile */
+@media (max-width: 480px) {
+    .empty-area img{
+        margin-top: 0px;
+        margin-bottom: 16px;
+    }
+}
+
+.empty-area span{
+    color: var(--color-slate-400);
+    font-size: 16px;
+}

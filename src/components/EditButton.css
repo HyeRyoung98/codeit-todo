@@ -1,0 +1,16 @@
+.edit-button {
+  padding: 0;
+  margin: 0;
+
+  border: none;
+  background: transparent;
+
+  cursor: pointer;
+
+  /* align-items: center;
+  justify-content: center; */
+}
+
+.edit-button img {
+  display: block;
+}

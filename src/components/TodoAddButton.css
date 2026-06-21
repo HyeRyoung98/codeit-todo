@@ -1,0 +1,18 @@
+.register-button {
+  padding: 0;
+  margin: 0;
+
+  border: none;
+  background: transparent;
+
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.register-button picture,
+.register-button img {
+  display: block;
+}

@@ -1,0 +1,65 @@
+.todo-item {
+  width: 100%;
+  height: 50px;
+  padding: 12px;
+  margin-top: 16px;
+
+  display: flex;
+  align-items: center;
+  gap: 16px;
+
+  border: 2px solid var(--color-slate-900);
+  border-radius: 27px;
+  background-color: #fff;
+
+  cursor: pointer;
+}
+
+.todo-item.checked {
+  background-color: var(--color-sub);
+}
+
+/* 체크 버튼 */
+.check-button {
+  width: 32px;
+  height: 32px;
+
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  padding: 0;
+}
+
+/* 텍스트 영역 */
+.todo-content-button {
+  flex: 1;
+
+  display: flex;
+  align-items: center;
+
+  height: 100%;
+
+  border: none;
+  background: transparent;
+
+  cursor: pointer;
+  text-align: left;
+
+  /* 클릭하기 편하게 */
+  padding-right: 12px;
+}
+
+.todo-text {
+  font-size: 16px;
+  color: var(--color-slate-800);
+}
+
+.todo-item.checked .todo-text {
+  text-decoration: line-through;
+}
