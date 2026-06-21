@@ -144,7 +144,7 @@ function TodoListPage() {
                                 key={todo.id}
                                 todo={todo}
                                 onChange={handleCheck}
-                                onMove={() => { console.log("상세 페이지 이동") }}
+                                onMove={() => { navigate(`/items/${todo.id}`) }}
                             />
                         ))
                     )}
