@@ -5,7 +5,11 @@ const BASE_URL = import.meta.env.VITE_API_URL;
 const TENANT_ID = import.meta.env.VITE_TENANT_ID;
 
 export async function getTodos(): Promise<Todo[]> {
-  const res = await fetch(`${BASE_URL}/${TENANT_ID}/items`);
+  const params = new URLSearchParams();
+  params.append("page", String(1));
+  params.append("pageSize", String(100));
+
+  const res = await fetch(`${BASE_URL}/${TENANT_ID}/items?${params.toString()}`);
 
   if (!res.ok) {
     throw new Error("Todo 목록 조회 실패");
