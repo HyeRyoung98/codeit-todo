@@ -21,6 +21,7 @@ export default function TodoDetailPage() {
     const [isEdited, setIsEdited] = useState(false);
     const [selectedFile, setSelectedFile] = useState<File | null>(null);
     const maxMemoLength = 300;
+    const maxInputLenth = 25;
 
     useEffect(() => {
         async function fetchTodoDetail() {
@@ -51,6 +52,29 @@ export default function TodoDetailPage() {
 
         setIsEdited(true);
     }
+
+    const handleTodoNameChange = (v: string) => {
+        if (!todo) return;
+
+        if (v.length > maxInputLenth) {
+            setTodo({
+                ...todo,
+                name: v.substr(0, maxInputLenth),
+            });
+            alert('최대 25자까지 가능');
+        } else {
+            setTodo({
+                ...todo,
+                name: v,
+            });
+        }
+        setTodo({
+            ...todo,
+            name: v,
+        });
+
+        setIsEdited(true);
+    };
 
     const handleImageChange = (
         e: React.ChangeEvent<HTMLInputElement>
@@ -105,6 +129,7 @@ export default function TodoDetailPage() {
             }
 
             const updatedTodo = await updateTodo(todo.id, {
+                name: todo.name,
                 memo: todo.memo ? todo.memo : "",
                 imageUrl: imageUrl ? imageUrl : "",
                 isCompleted: todo.isCompleted,
@@ -144,6 +169,7 @@ export default function TodoDetailPage() {
                     isCompleted={todo?.isCompleted ?? false}
                     todoName={todo?.name ?? ""}
                     onChange={handleTodoCheck}
+                    onNameChange={handleTodoNameChange}
                 />
                 <div className="img-memo-area">
                     <ImageUploader imageUrl={todo?.imageUrl ?? ""} onChangeImage={handleImageChange}></ImageUploader>

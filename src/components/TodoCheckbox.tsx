@@ -6,9 +6,10 @@ interface TodoCheckboxProps {
   isCompleted: boolean;
   todoName: string;
   onChange: () => void;
+  onNameChange?: (value: string) => void;
 }
 
-const TodoCheckbox: React.FC<TodoCheckboxProps> = ({ isCompleted, todoName, onChange }) => {
+const TodoCheckbox: React.FC<TodoCheckboxProps> = ({ isCompleted, todoName, onChange, onNameChange }) => {
 
   return (
     <button
@@ -33,7 +34,12 @@ const TodoCheckbox: React.FC<TodoCheckboxProps> = ({ isCompleted, todoName, onCh
         )}
       </span>
 
-      <span className="todo-checkbox-text">{todoName}</span>
+      <input
+        className="todo-checkbox-text"
+        value={todoName}
+        onChange={(e) => onNameChange?.(e.target.value)}
+        onClick={(e) => e.stopPropagation()}
+      />
     </button>
 
   )
